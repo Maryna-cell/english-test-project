@@ -1,0 +1,96 @@
+{% extends 'base1.html' %}
+
+{% block title%}Test{% endblock %}
+{% block content%}
+
+ <div class="leadspase">
+    </div><div class="content group">
+        <div class="welcome">
+    <p id="countdown"></p>
+
+    <form id="myform" action="/result" method="POST">
+    <input type="hidden" name="email" value="{{ email }}">
+    <input type="hidden" name="selected_level" value="{{ selected_level }}">
+    <input type="hidden" name="used_time" id="used_time" value="0">
+        {% csrf_token %}
+
+        {% if questions %}
+            {% regroup questions by grammar_topic as questions_by_topic %}
+            {% for topic in questions_by_topic %}
+                 <div>
+                    <h2>{{ topic.grouper.grammar_name }}</h2>
+                    {% for question in topic.list %}
+                          <div>
+                            <h4>{{ question.question }}</h4>
+                            {% for answer in question.answers.all %}
+                              <div><input type="checkbox" class="gathering" name="{{ question.id }}" id="{{ answer.id }}"  value="{{ answer.id }}"><label for="{{ answer.id }}">{{ answer.text_answer }}</label></div>
+                          {% endfor %}
+                           <br>
+                          </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        {% else %}
+             <p>No questions found for this level.</p>
+        {% endif %}
+        <button id="mysubmit">Submit</button>
+    </form>
+
+         <script>
+let time = {{ level.timing|default:"0" }} * 60; // Задаём начальное время в секундах
+const timer = setInterval(() => {
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  // Форматируем вывод в формате "минуты:секунды"
+  document.getElementById('countdown').textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+  if (time > 0) {
+    time--;
+    document.getElementById('used_time').value = {{ level.timing }} * 60 - time;
+        }
+        else
+
+     { let elements=document.getElementsByClassName("gathering");
+     for (let e of elements) {e.disabled=true}
+    clearInterval(timer);
+  }
+}, 1000); // Интервал делаем одной секунды
+  let button=document.getElementById('mysubmit'); //'mysubmit' - id кнопки button
+             button.addEventListener('click', function() {
+              let elements=document.getElementsByClassName("gathering"); //'gathering'- имя класса для описания checkbox - атрибут
+     for (let e of elements) {e.disabled=false};
+     let myform=document.getElementById('myform'); //'myform' - id формы, submit - метод формы для отправки на сервер
+     myform.submit();
+             });
+
+    // Сброс отмеченных ответов при загрузке страницы
+    window.onload = function() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const radiobuttons = document.querySelectorAll('input[type="radio"]');
+
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+
+        radiobuttons.forEach(function(radiobutton) {
+            radiobutton.checked = false;
+        });
+    };
+</script>
+ </div>
+        </div>
+</div>
+
+<style>
+#countdown {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+}
+</style>
+{% endblock %}

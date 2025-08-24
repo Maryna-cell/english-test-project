@@ -1,0 +1,40 @@
+{% extends 'base1.html' %}<!--наследуем всё из родительского файла base1.html-->
+{% block title%}Education and Training Network{% endblock %}
+{% block content %}
+    <div class="leadspase">
+        <div class="content">
+            <h2></h2>
+        </div>
+    </div><!-- AND LEADSPACE -->
+    <div class="content group">
+        <div class="welcome">
+            <h2> Чтобы связаться с нами, заполните следующие поля:</h2>
+            <form action="/feedback" method="POST" id ="feedback-form">
+                {% csrf_token %}
+                <!--<p><a name="bottom"></a></p> ANCHOR -->-->
+                <h2>Drop Us a Line</h2>
+                <input type="text" name="user_name" required placeholder="YourName" x-autocompletetype="name">
+                <input type="email" name="user_e_mail" required placeholder="Email" x-autocompletetype="email">
+                <textarea name="user_message" required rows="10" placeholder="Message"></textarea>
+                <p>* All Fields Are Required</p>
+                <input type="submit" value="SEND">
+            </form><!-- AND MAIL FORM -->
+            <!--<h2 id="testbtn">Test your English</h2>-->
+            <!--<h2><a href="/articles">Read the articles</a></h2>-->
+            <!--<h2><a href="/tests">Test your English</a></h2>-->
+        </div>
+
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+    </div><!-- AND CONTENT -->
+    <!--<script>
+        document.getElementById('testbtn').onclick = function() {
+            location.href = '/tests';
+        }
+    </script>-->
+
+{% endblock %}
+
+
+

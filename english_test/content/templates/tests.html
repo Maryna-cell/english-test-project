@@ -1,0 +1,49 @@
+{% extends 'base1.html' %}
+{% block title%}Tests{% endblock %}
+
+{% block bottom_script %}
+  <script>
+    function radio_click(id) {
+        let checked = document.getElementById(id).checked;
+        if (checked) {
+            let text = document.getElementById('i'+id).value;
+            document.getElementById('instruction').innerHTML = text;
+        }
+    }
+  </script>
+{% endblock %}
+{% block content %}
+
+  <div class="pretest">
+<p>Enter your e-mail adress and choose the level you want to test. To start the test press the button Start. Good luck!</p>
+      <br>
+    <form action="/testing" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div class="form-container">
+            <div class="radio-button-container">
+              {% for level in levels %}
+                <div class="radio-button-item">
+                  <input type="radio" name="level" id="{{ level.level }}" value="{{ level.level }}" onclick="radio_click('{{ level.level }}');" required>
+                  <label for="{{ level.level }}">{{ level.level }}</label>
+                </div>
+                <input type="hidden" name="instruction" id="i{{ level.level }}" value="{{ level.instruction }}">
+              {% endfor %}
+            </div>
+            
+            <div id="instruction"></div>
+        </div>
+
+        <div>
+          <button type="submit">Start</button>
+        </div>
+    </form>
+  </div>
+{% endblock %}
+         
+
+  
+

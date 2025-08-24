@@ -1,0 +1,47 @@
+{% extends 'base1.html' %}<!--наследуем всё из родительского файла base1.html-->
+{% block title%}Education and Training Network{% endblock %}
+{% block content %}
+    <div class="leadspase">
+        <div class="content">
+            <h2></h2>
+            <h3>Мудрость мостов рождается из того, что они знают обе стороны, они знают оба берега!</h3>
+            <p>Мехмет Мурат Илдан</p>
+<style>
+   ul.hr {
+    margin-left: 900px; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+   }
+   ul.hr li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    padding: 3px; /* Поля вокруг текста */
+   }
+  </style>
+<div>
+    <ul class="hr">
+        <li> <a href="/index1"> EN </a> </li>
+         <li> <a href="/index1_ru"> RU </a> </li>
+    </ul>
+</div>
+        </div>
+    </div><!-- AND LEADSPACE -->
+    <div class="content group">
+        <div class="welcome">
+            <!--<h2 id="testbtn">Test your English</h2>-->
+            <h2><a href="/tests">Протестируйте Ваш английский</a></h2>
+            <h2><a href="/articles_ru">Прочитайте статьи</a></h2>
+        </div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+    </div><!-- AND CONTENT -->
+    <!--<script>
+        document.getElementById('testbtn').onclick = function() {
+            location.href = '/tests';
+        }
+    </script>-->
+
+{% endblock %}
+
+
+

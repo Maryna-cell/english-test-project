@@ -1,0 +1,46 @@
+{% extends 'base1.html' %}<!--наследуем всё из родительского файла base1.html-->
+{% block title%}Articles{% endblock %}
+{% block content %}
+    <div class="leadspase">
+        <div class="content">
+            <!--<h2></h2>-->
+<style>
+   ul.hr {
+    margin-left: 900px; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+   }
+   ul.hr li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    padding: 3px; /* Поля вокруг текста */
+   }
+  </style>
+<div>
+    <ul class="hr">
+        <li> <a href="/articles"> EN </a> </li>
+         <li> <a href="/articles_ru"> RU </a> </li>
+  </ul>
+</div>
+
+        </div>
+    </div><!-- AND LEADSPACE -->
+    <div class="content group">
+        <div class="welcome">
+            <!--<h2 id="testbtn">Test your English</h2>-->
+            <h2><a href="/how_long_to_learn">HOW LONG DO I NEED TO LEARN ENGLISH?</a></h2>
+            <h2><a href="/what_is_advanced">RATIONALE: WHAT IS AN 'ADVANCED LEVEL'?</a></h2>
+        </div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+    </div><!-- AND CONTENT -->
+    <!--<script>
+        document.getElementById('testbtn').onclick = function() {
+            location.href = '/tests';
+        }
+    </script>-->
+
+{% endblock %}
+
+
+

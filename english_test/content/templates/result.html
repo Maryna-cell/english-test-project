@@ -1,0 +1,50 @@
+{% extends 'base1.html' %}
+
+{% block title%}Result{% endblock %}
+
+{% block content %}
+
+<div class="leadspase">
+
+    </div><!-- AND LEADSPACE -->
+    <div class="content group">
+        <div class="welcome">
+  <div>
+    {{email}}
+  </div>
+    <div>
+    {{now}}
+  </div>
+  <div>
+    {{selected_level}}
+  </div>
+
+  <div>
+    {{used_time}}
+  </div>
+
+
+  <div>
+    {% for key, val in statistics.items %}
+        <div>
+            <span>{{key}}</span>
+            <span style="..."></span>
+            <span>{{val}}</span>
+        </div>
+
+    {% endfor %}
+      <div class="empty"></div>
+      <div>
+          <span>Total: {{total}}</span>
+      </div>
+  </div>
+               </div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+    </div><!-- AND CONTENT -->
+{% endblock %}
+
+
+
+

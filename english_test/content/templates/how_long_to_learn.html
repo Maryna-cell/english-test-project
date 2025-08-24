@@ -1,0 +1,65 @@
+{% extends 'base1.html' %}<!--наследуем всё из родительского файла base1.html-->
+{% block title%}How long to learn{% endblock %}
+{% block content %}
+<div class="empty"></div>
+ <div class="content group">
+ <!--<div class="welcome">-->
+<style>
+   ul.hr {
+    margin-left: 900px; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+   }
+   ul.hr li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    padding: 3px; /* Поля вокруг текста */
+   }
+  </style>
+<div>
+    <ul class="hr">
+        <li> <a href="/how_long_to_learn"> EN </a> </li>
+         <li> <a href="/how_long_to_learn_ru"> RU </a> </li>
+  </ul>
+</div>
+    <div class="articles">
+            <h2>HOW LONG DO I NEED TO LEARN ENGLISH?</h2>
+            <p>Research shows that each additional language level takes approximately 2 times longer than the previous one.</p>
+            <p>Usually, it’s difficult to start, that is, hard to master level A1. Then a student handles tools for general understanding the language structure, and the study is progressing rapidly, and there appear clear and obvious skills allowing to practically apply the language – this corresponds to levels A2 and B1. Then there comes the stage when it seems that there is no progress. This is normal, because it’s the most difficult to tear away from Intermediate level to Advanced. It is particularly time-consuming and laborious work to reach levels B2, C1 and C2.</p>
+            <p>The speed of language learning depends on several factors:</p>
+            <ul>
+                <li>Your overall educational background</li>
+                <li>The right educational and training materials</li>
+                <li>The intensity of training</li>
+                <li>Your natural language abilities</li>
+            </ul>
+            <p>It's hard to say what priority sequence could be applied to these factors. They are all important, perhaps equally.</p>
+            <p>The table below shows how many hours you might have to spend to go from a lower level to a higher one, but remember, these figures are only intended as a guide. You may need more or less time.</p>
+            <p>This table shows the approximate number of hours of training for each level of difficulty under the control of a teacher(s) or some educational environment.</p>
+            <table>
+                <col width="500px">
+                <tr><th>Language Level</th><th>Number of Hours (approximate)</th></tr>
+                <tr><td>A1 (Beginner)</td><td>100 – 120</td></tr>
+                <tr><td>A2 (Pre-Intermediate)</td><td>180 – 200</td></tr>
+                <tr><td>B1 (Lower Intermediate)</td><td>350 – 400</td></tr>
+                <tr><td>B2 (Upper-Intermediate)</td><td>500 – 600</td></tr>
+                <tr><td>C1 (Lower Advanced)</td><td>700 – 800</td></tr>
+                <tr><td>C2 (Proficiency)</td><td>1,000 – 1,200</td></tr>
+            </table>
+            <p>The following table is based on the pan-European Languages competence (Common European Framework of Reference, CEFR - is a guideline used to describe achievements of learners of foreign languages across <span>Europe</span>).</p>
+            <table>
+                <col width="150px">
+                <tr><th>CEFR Level</th><th>Cambridge English Exam</th><th>Number of Hours (approximate)</th></tr>
+                <tr><td>C2</td><td>Cambridge English: Proficiency (CPE)</td><td>1,000 – 1,200</td></tr>
+                <tr><td>C1</td><td>Cambridge English: Advanced (CAE)</td><td>700 – 800</td></tr>
+                <tr><td>B2</td><td>Cambridge English: First (FCE)</td><td>500 – 600</td></tr>
+                <tr><td>B1</td><td>Cambridge English: Preliminary (PET)</td><td>350 – 400</td></tr>
+                <tr><td>A2</td><td>Cambridge English: Key (KET)</td><td>180 – 200</td></tr>
+            </table>
+    </div><!-- AND ARTICLE HOW LONG -->
+    </div><!-- AND CONTENT -->
+ <!--</div>< AND CONTENT -->
+
+{% endblock %}
+
+
+
