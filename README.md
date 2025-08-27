@@ -33,7 +33,11 @@ This is a web application, developed with Django, to assess English language pro
 
 ### Screenshots / Demo
 - A screenshot of the test results page .
+  <img width="307" height="446" alt="зображення" src="https://github.com/user-attachments/assets/a8d8406b-20c0-46dc-8948-7d4cc258beb6" />
+
 - A screenshot of the project's file structure .
+- <img width="348" height="824" alt="зображення" src="https://github.com/user-attachments/assets/2e0b991b-910d-4c3b-bc85-8e5bf0db49eb" />
+
 
 ### Author and Contact
 - **Author:** Maryna
