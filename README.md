@@ -6,6 +6,7 @@ This is a web application, developed with Django, to assess English language pro
 - Dynamic test generation based on selected level (A1, A2, etc.) and topic priorities.
 - Real-time score calculation for each topic and a final overall score.
 - A timer to track the time spent on the test.
+- Automated ordering and numbering of questions based on a given topic.
 - User test results are saved in the database for future reference.
 - Responsive design that works well on various devices.
 
